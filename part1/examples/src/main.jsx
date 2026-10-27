@@ -1,9 +1,6 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './Hello.jsx'
+import ReactDOM from 'react-dom/client'
+import App from './ComplexState.jsx' //switch out this filename to render different examples
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+let counter = 1
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />)

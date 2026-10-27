@@ -1,3 +1,5 @@
+//destructuring the properties makes them individually accessible
+//{name, age} vs props.name props.age
 const Hello = ({name, age}) => {
     const bornYear = () => new Date().getFullYear() - age
   return (
