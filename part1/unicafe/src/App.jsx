@@ -1,5 +1,18 @@
 import { useState } from "react";
 
+const Statistics = ({label, value}) => {
+  if(label === 'average' || label === 'positive'){
+    value = Number.isNaN(value) ? 0 : value
+  }
+  if(label === 'positive'){
+    value = `${value.toFixed(2)}%`
+  }
+  
+  return (
+    <p>{label}: {value}</p>
+  )
+}
+
 const App = () => {
   const [good, setGood] = useState(0)
   const [neutral, setNeutral] = useState(0)
@@ -17,12 +30,12 @@ const App = () => {
       <button onClick={() => setBad(bad + 1)}>bad</button>
 
       <h1>statistics</h1>
-      <p>good: {good}</p>
-      <p>neutral: {neutral}</p>
-      <p>bad: {bad}</p>
-      <p>all: {all}</p>
-      <p>average: {Number.isNaN(average) ? 0 : all} </p>
-      <p>positive: {Number.isNaN(positive) ? "-" : `${positive.toFixed(2)}%`}</p>
+      <Statistics label='good' value={good} />
+      <Statistics label='neutral' value={neutral} />
+      <Statistics label='bad' value={bad} />
+      <Statistics label='all' value={all} />
+      <Statistics label='average' value={average} />
+      <Statistics label='positive' value={positive} />
     </div>
   )
 }
