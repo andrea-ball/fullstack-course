@@ -7,7 +7,11 @@ const Statistics = ({ all, stats }) => {
     )
   }
   return (
-    buildStatLines(stats)
+    <table>
+      <tbody>
+      {buildStatLines(stats)}
+      </tbody>
+    </table>
   )
 }
 
@@ -16,17 +20,19 @@ const StatisticLine = ({ label, value }) => {
   if (label === 'positive') {
     value = `${value.toFixed(2)}%`
   }
-
   return (
-    <p>{label}: {value}</p>
+    <tr>
+      <td>{label}:</td>
+      <td>{value}</td>
+    </tr>
   )
 }
 
 const buildStatLines = (stats) => {
   const items = stats.map(stat =>
-    <StatisticLine label={stat.label} value={stat.value} />
+    <StatisticLine key={stat.label} label={stat.label} value={stat.value} />
   )
-  return <div>{items}</div>
+  return items 
 }
 
 const Button = ({ onClick, text }) =>
