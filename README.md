@@ -1,16 +1,27 @@
-# React + Vite
+# Purpose of this project
+To freshen skills in React, but also get more up to date on JavaScript and TypeScript. Figuring out how they all work together in harmony <3
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Follows along with the fullstackopen.com course.
 
-Currently, two official plugins are available:
+# Folder structure
+Each part of the course has its own folder in the structure. "Examples" folders follow along with the course and act as notes as well as live
+examples covered in the course.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Named folders within each part refer to a specific exercise/project within that part. 
 
-## React Compiler
+# Creating a new app folder
+To spin up a new app folder within a part, run the following commands:
+`npm create vite@latest [folderName] -- --template react`
+`cd [folderName]`
+`npm install`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Use `npm run dev` to run the selected app from its high-level folder.
 
-## Expanding the ESLint configuration
+## Copying an existing app into a new part
+For a continuation of a project in a new part, use these commands instead:
+`cp -r part[1]/[folderName] part[2]/[folderName]`
+`rm -rf part[2]/[folderName]/node_modules`
+`cd part[2]/[folderName]`
+`npm install`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This will copy the app files into the new part folder structure, remove and reinstall the node_modules folder and dependencies. 
